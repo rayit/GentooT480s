@@ -24,5 +24,10 @@ Some of the stuff that is defined here:
 - UEFI GRUB target
 - The heretical ACCEPT_LICENSE="*"
 
+# 16.0
+
+Added 16.0 config (need to check it)
+
+
 # BSPWM, SXHKD, Polybar and Rofi
 All these files are purely aesthic and application autostart on my machines. SXHKD is default apart from Alacritty terminal emulator, brightness and sound controls.
