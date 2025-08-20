@@ -49,3 +49,10 @@ $ rc-update add dhcpcd default
 $ rc-service dhcpcd start
 $ emerge --ask sys-apps/iproute2 net-wireless/wpa_supplicant net-wireless/iw net-wireless/wireless-tools
 
+
+
+emerge --ask @module-rebuild
+
+
+make && make modules_install && cp arch/x86/boot/bzImage
+ /efi/EFI/gentoo/bzImage.efi

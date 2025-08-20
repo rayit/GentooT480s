@@ -156,7 +156,8 @@ CONFIG_RCU_STALL_COMMON=y
 CONFIG_RCU_NEED_SEGCBLIST=y
 # end of RCU Subsystem
 
-# CONFIG_IKCONFIG is not set
+CONFIG_IKCONFIG=y
+CONFIG_IKCONFIG_PROC=y
 # CONFIG_IKHEADERS is not set
 CONFIG_LOG_BUF_SHIFT=17
 CONFIG_LOG_CPU_MAX_BUF_SHIFT=12
@@ -1329,6 +1330,7 @@ CONFIG_GENERIC_CPU_DEVICES=y
 CONFIG_GENERIC_CPU_AUTOPROBE=y
 CONFIG_GENERIC_CPU_VULNERABILITIES=y
 CONFIG_REGMAP=y
+CONFIG_REGMAP_I2C=y
 CONFIG_DMA_SHARED_BUFFER=y
 # CONFIG_DMA_FENCE_TRACE is not set
 # CONFIG_FW_DEVLINK_SYNC_STATE_TIMEOUT is not set
@@ -2244,7 +2246,7 @@ CONFIG_I2C=y
 CONFIG_ACPI_I2C_OPREGION=y
 CONFIG_I2C_BOARDINFO=y
 # CONFIG_I2C_CHARDEV is not set
-CONFIG_I2C_MUX=m
+CONFIG_I2C_MUX=y
 
 #
 # Multiplexer I2C Chip support
@@ -2687,21 +2689,40 @@ CONFIG_BCMA_POSSIBLE=y
 # CONFIG_MEDIA_CEC_SUPPORT is not set
 # end of CEC support
 
-CONFIG_MEDIA_SUPPORT=m
+CONFIG_MEDIA_SUPPORT=y
 CONFIG_MEDIA_SUPPORT_FILTER=y
 CONFIG_MEDIA_SUBDRV_AUTOSELECT=y
 
 #
 # Media device types
 #
-# CONFIG_MEDIA_CAMERA_SUPPORT is not set
+CONFIG_MEDIA_CAMERA_SUPPORT=y
 # CONFIG_MEDIA_ANALOG_TV_SUPPORT is not set
 # CONFIG_MEDIA_DIGITAL_TV_SUPPORT is not set
 # CONFIG_MEDIA_RADIO_SUPPORT is not set
 # CONFIG_MEDIA_SDR_SUPPORT is not set
-# CONFIG_MEDIA_PLATFORM_SUPPORT is not set
+CONFIG_MEDIA_PLATFORM_SUPPORT=y
 # CONFIG_MEDIA_TEST_SUPPORT is not set
 # end of Media device types
+
+CONFIG_VIDEO_DEV=y
+CONFIG_MEDIA_CONTROLLER=y
+
+#
+# Video4Linux options
+#
+CONFIG_VIDEO_V4L2_I2C=y
+CONFIG_VIDEO_V4L2_SUBDEV_API=y
+CONFIG_VIDEO_ADV_DEBUG=y
+# CONFIG_VIDEO_FIXED_MINOR_RANGES is not set
+CONFIG_V4L2_FWNODE=y
+CONFIG_V4L2_ASYNC=y
+# end of Video4Linux options
+
+#
+# Media controller options
+#
+# end of Media controller options
 
 #
 # Media drivers
@@ -2714,8 +2735,134 @@ CONFIG_MEDIA_SUBDRV_AUTOSELECT=y
 #
 # Media drivers
 #
-# CONFIG_MEDIA_USB_SUPPORT is not set
+CONFIG_MEDIA_USB_SUPPORT=y
+
+#
+# Webcam devices
+#
+# CONFIG_USB_GSPCA is not set
+# CONFIG_USB_PWC is not set
+# CONFIG_USB_S2255 is not set
+# CONFIG_VIDEO_USBTV is not set
+CONFIG_USB_VIDEO_CLASS=y
+CONFIG_USB_VIDEO_CLASS_INPUT_EVDEV=y
+
+#
+# Webcam, TV (analog/digital) USB devices
+#
+# CONFIG_VIDEO_EM28XX is not set
 # CONFIG_MEDIA_PCI_SUPPORT is not set
+CONFIG_MEDIA_PLATFORM_DRIVERS=y
+# CONFIG_V4L_PLATFORM_DRIVERS is not set
+# CONFIG_V4L_MEM2MEM_DRIVERS is not set
+
+#
+# Allegro DVT media platform drivers
+#
+
+#
+# Amlogic media platform drivers
+#
+
+#
+# Amphion drivers
+#
+
+#
+# Aspeed media platform drivers
+#
+
+#
+# Atmel media platform drivers
+#
+
+#
+# Cadence media platform drivers
+#
+# CONFIG_VIDEO_CADENCE_CSI2RX is not set
+# CONFIG_VIDEO_CADENCE_CSI2TX is not set
+
+#
+# Chips&Media media platform drivers
+#
+
+#
+# Intel media platform drivers
+#
+
+#
+# Marvell media platform drivers
+#
+
+#
+# Mediatek media platform drivers
+#
+
+#
+# Microchip Technology, Inc. media platform drivers
+#
+
+#
+# Nuvoton media platform drivers
+#
+
+#
+# NVidia media platform drivers
+#
+
+#
+# NXP media platform drivers
+#
+
+#
+# Qualcomm media platform drivers
+#
+
+#
+# Raspberry Pi media platform drivers
+#
+# CONFIG_VIDEO_RP1_CFE is not set
+
+#
+# Renesas media platform drivers
+#
+
+#
+# Rockchip media platform drivers
+#
+
+#
+# Samsung media platform drivers
+#
+
+#
+# STMicroelectronics media platform drivers
+#
+
+#
+# Sunxi media platform drivers
+#
+
+#
+# Texas Instruments drivers
+#
+
+#
+# Verisilicon media platform drivers
+#
+
+#
+# VIA media platform drivers
+#
+
+#
+# Xilinx media platform drivers
+#
+CONFIG_UVC_COMMON=y
+CONFIG_VIDEOBUF2_CORE=y
+CONFIG_VIDEOBUF2_V4L2=y
+CONFIG_VIDEOBUF2_MEMOPS=y
+CONFIG_VIDEOBUF2_VMALLOC=y
 # end of Media drivers
 
 CONFIG_MEDIA_HIDE_ANCILLARY_SUBDRV=y
@@ -2723,6 +2870,108 @@ CONFIG_MEDIA_HIDE_ANCILLARY_SUBDRV=y
 #
 # Media ancillary drivers
 #
+CONFIG_VIDEO_CAMERA_SENSOR=y
+# CONFIG_VIDEO_ALVIUM_CSI2 is not set
+# CONFIG_VIDEO_AR0521 is not set
+# CONFIG_VIDEO_GC0308 is not set
+# CONFIG_VIDEO_GC05A2 is not set
+# CONFIG_VIDEO_GC08A3 is not set
+# CONFIG_VIDEO_GC2145 is not set
+# CONFIG_VIDEO_HI556 is not set
+# CONFIG_VIDEO_HI846 is not set
+# CONFIG_VIDEO_HI847 is not set
+# CONFIG_VIDEO_IMX208 is not set
+# CONFIG_VIDEO_IMX219 is not set
+# CONFIG_VIDEO_IMX258 is not set
+# CONFIG_VIDEO_IMX274 is not set
+# CONFIG_VIDEO_IMX283 is not set
+# CONFIG_VIDEO_IMX290 is not set
+# CONFIG_VIDEO_IMX296 is not set
+# CONFIG_VIDEO_IMX319 is not set
+# CONFIG_VIDEO_IMX355 is not set
+# CONFIG_VIDEO_MT9M001 is not set
+# CONFIG_VIDEO_MT9M111 is not set
+# CONFIG_VIDEO_MT9M114 is not set
+# CONFIG_VIDEO_MT9P031 is not set
+# CONFIG_VIDEO_MT9T112 is not set
+# CONFIG_VIDEO_MT9V011 is not set
+# CONFIG_VIDEO_MT9V032 is not set
+# CONFIG_VIDEO_MT9V111 is not set
+# CONFIG_VIDEO_OG01A1B is not set
+# CONFIG_VIDEO_OV01A10 is not set
+# CONFIG_VIDEO_OV02A10 is not set
+# CONFIG_VIDEO_OV02E10 is not set
+# CONFIG_VIDEO_OV02C10 is not set
+# CONFIG_VIDEO_OV08D10 is not set
+# CONFIG_VIDEO_OV08X40 is not set
+# CONFIG_VIDEO_OV13858 is not set
+# CONFIG_VIDEO_OV13B10 is not set
+# CONFIG_VIDEO_OV2640 is not set
+# CONFIG_VIDEO_OV2680 is not set
+# CONFIG_VIDEO_OV2685 is not set
+# CONFIG_VIDEO_OV2740 is not set
+# CONFIG_VIDEO_OV5647 is not set
+# CONFIG_VIDEO_OV5648 is not set
+# CONFIG_VIDEO_OV5670 is not set
+# CONFIG_VIDEO_OV5675 is not set
+# CONFIG_VIDEO_OV5693 is not set
+# CONFIG_VIDEO_OV5695 is not set
+# CONFIG_VIDEO_OV64A40 is not set
+# CONFIG_VIDEO_OV6650 is not set
+# CONFIG_VIDEO_OV7251 is not set
+# CONFIG_VIDEO_OV7640 is not set
+# CONFIG_VIDEO_OV7670 is not set
+# CONFIG_VIDEO_OV772X is not set
+# CONFIG_VIDEO_OV7740 is not set
+# CONFIG_VIDEO_OV8856 is not set
+# CONFIG_VIDEO_OV8858 is not set
+# CONFIG_VIDEO_OV8865 is not set
+# CONFIG_VIDEO_OV9640 is not set
+# CONFIG_VIDEO_OV9650 is not set
+# CONFIG_VIDEO_OV9734 is not set
+# CONFIG_VIDEO_RDACM20 is not set
+# CONFIG_VIDEO_RDACM21 is not set
+# CONFIG_VIDEO_RJ54N1 is not set
+# CONFIG_VIDEO_S5K5BAF is not set
+# CONFIG_VIDEO_S5K6A3 is not set
+# CONFIG_VIDEO_ET8EK8 is not set
+
+#
+# Camera ISPs
+#
+# CONFIG_VIDEO_THP7312 is not set
+# end of Camera ISPs
+
+#
+# Lens drivers
+#
+# CONFIG_VIDEO_AK7375 is not set
+# CONFIG_VIDEO_DW9714 is not set
+# CONFIG_VIDEO_DW9719 is not set
+# CONFIG_VIDEO_DW9768 is not set
+# CONFIG_VIDEO_DW9807_VCM is not set
+# end of Lens drivers
+
+#
+# Flash devices
+#
+# CONFIG_VIDEO_ADP1653 is not set
+# CONFIG_VIDEO_LM3560 is not set
+# CONFIG_VIDEO_LM3646 is not set
+# end of Flash devices
+
+#
+# audio, video and radio I2C drivers auto-selected by 'Autoselect ancillary drivers'
+#
+
+#
+# Video and audio decoders
+#
+
+#
+# Video serializers and deserializers
+#
+# end of Video serializers and deserializers
 # end of Media ancillary drivers
 
 #
@@ -3274,7 +3523,7 @@ CONFIG_USB_DEFAULT_PERSIST=y
 # CONFIG_USB_LEDS_TRIGGER_USBPORT is not set
 CONFIG_USB_AUTOSUSPEND_DELAY=2
 CONFIG_USB_DEFAULT_AUTHORIZATION_MODE=1
-# CONFIG_USB_MON is not set
+CONFIG_USB_MON=y
 
 #
 # USB Host Controller Drivers
@@ -3350,7 +3599,60 @@ CONFIG_USB_STORAGE=y
 #
 # USB port drivers
 #
-# CONFIG_USB_SERIAL is not set
+CONFIG_USB_SERIAL=y
+# CONFIG_USB_SERIAL_CONSOLE is not set
+# CONFIG_USB_SERIAL_GENERIC is not set
+# CONFIG_USB_SERIAL_SIMPLE is not set
+# CONFIG_USB_SERIAL_AIRCABLE is not set
+# CONFIG_USB_SERIAL_ARK3116 is not set
+# CONFIG_USB_SERIAL_BELKIN is not set
+# CONFIG_USB_SERIAL_CH341 is not set
+# CONFIG_USB_SERIAL_WHITEHEAT is not set
+# CONFIG_USB_SERIAL_DIGI_ACCELEPORT is not set
+# CONFIG_USB_SERIAL_CP210X is not set
+# CONFIG_USB_SERIAL_CYPRESS_M8 is not set
+# CONFIG_USB_SERIAL_EMPEG is not set
+# CONFIG_USB_SERIAL_FTDI_SIO is not set
+# CONFIG_USB_SERIAL_VISOR is not set
+# CONFIG_USB_SERIAL_IPAQ is not set
+# CONFIG_USB_SERIAL_IR is not set
+# CONFIG_USB_SERIAL_EDGEPORT is not set
+# CONFIG_USB_SERIAL_EDGEPORT_TI is not set
+# CONFIG_USB_SERIAL_F81232 is not set
+# CONFIG_USB_SERIAL_F8153X is not set
+# CONFIG_USB_SERIAL_GARMIN is not set
+# CONFIG_USB_SERIAL_IPW is not set
+# CONFIG_USB_SERIAL_IUU is not set
+# CONFIG_USB_SERIAL_KEYSPAN_PDA is not set
+# CONFIG_USB_SERIAL_KEYSPAN is not set
+# CONFIG_USB_SERIAL_KLSI is not set
+# CONFIG_USB_SERIAL_KOBIL_SCT is not set
+# CONFIG_USB_SERIAL_MCT_U232 is not set
+# CONFIG_USB_SERIAL_METRO is not set
+# CONFIG_USB_SERIAL_MOS7720 is not set
+# CONFIG_USB_SERIAL_MOS7840 is not set
+# CONFIG_USB_SERIAL_MXUPORT is not set
+# CONFIG_USB_SERIAL_NAVMAN is not set
+# CONFIG_USB_SERIAL_PL2303 is not set
+# CONFIG_USB_SERIAL_OTI6858 is not set
+# CONFIG_USB_SERIAL_QCAUX is not set
+# CONFIG_USB_SERIAL_QUALCOMM is not set
+# CONFIG_USB_SERIAL_SPCP8X5 is not set
+# CONFIG_USB_SERIAL_SAFE is not set
+# CONFIG_USB_SERIAL_SIERRAWIRELESS is not set
+# CONFIG_USB_SERIAL_SYMBOL is not set
+# CONFIG_USB_SERIAL_TI is not set
+# CONFIG_USB_SERIAL_CYBERJACK is not set
+# CONFIG_USB_SERIAL_OPTION is not set
+# CONFIG_USB_SERIAL_OMNINET is not set
+# CONFIG_USB_SERIAL_OPTICON is not set
+# CONFIG_USB_SERIAL_XSENS_MT is not set
+# CONFIG_USB_SERIAL_WISHBONE is not set
+# CONFIG_USB_SERIAL_SSU100 is not set
+# CONFIG_USB_SERIAL_QT2 is not set
+# CONFIG_USB_SERIAL_UPD78F0730 is not set
+# CONFIG_USB_SERIAL_XR is not set
+# CONFIG_USB_SERIAL_DEBUG is not set
 
 #
 # USB Miscellaneous drivers
@@ -3390,8 +3692,43 @@ CONFIG_USB_STORAGE=y
 # end of USB Physical Layer drivers
 
 # CONFIG_USB_GADGET is not set
-# CONFIG_TYPEC is not set
-# CONFIG_USB_ROLE_SWITCH is not set
+CONFIG_TYPEC=y
+CONFIG_TYPEC_TCPM=y
+CONFIG_TYPEC_TCPCI=y
+# CONFIG_TYPEC_RT1711H is not set
+# CONFIG_TYPEC_TCPCI_MAXIM is not set
+# CONFIG_TYPEC_FUSB302 is not set
+# CONFIG_TYPEC_UCSI is not set
+# CONFIG_TYPEC_TPS6598X is not set
+# CONFIG_TYPEC_ANX7411 is not set
+# CONFIG_TYPEC_RT1719 is not set
+# CONFIG_TYPEC_HD3SS3220 is not set
+# CONFIG_TYPEC_STUSB160X is not set
+# CONFIG_TYPEC_WUSB3801 is not set
+
+#
+# USB Type-C Multiplexer/DeMultiplexer Switch support
+#
+# CONFIG_TYPEC_MUX_FSA4480 is not set
+# CONFIG_TYPEC_MUX_GPIO_SBU is not set
+# CONFIG_TYPEC_MUX_PI3USB30532 is not set
+# CONFIG_TYPEC_MUX_IT5205 is not set
+# CONFIG_TYPEC_MUX_NB7VPQ904M is not set
+# CONFIG_TYPEC_MUX_PS883X is not set
+# CONFIG_TYPEC_MUX_PTN36502 is not set
+# CONFIG_TYPEC_MUX_TUSB1046 is not set
+# CONFIG_TYPEC_MUX_WCD939X_USBSS is not set
+# end of USB Type-C Multiplexer/DeMultiplexer Switch support
+
+#
+# USB Type-C Alternate Mode drivers
+#
+# CONFIG_TYPEC_DP_ALTMODE is not set
+# CONFIG_TYPEC_TBT_ALTMODE is not set
+# end of USB Type-C Alternate Mode drivers
+
+CONFIG_USB_ROLE_SWITCH=y
+CONFIG_USB_ROLES_INTEL_XHCI=y
 CONFIG_MMC=m
 CONFIG_MMC_BLOCK=m
 CONFIG_MMC_BLOCK_MINORS=8
@@ -3511,7 +3848,11 @@ CONFIG_SYNC_FILE=y
 # CONFIG_UIO is not set
 # CONFIG_VFIO is not set
 CONFIG_IRQ_BYPASS_MANAGER=y
-# CONFIG_VIRT_DRIVERS is not set
+CONFIG_VIRT_DRIVERS=y
+CONFIG_VMGENID=y
+# CONFIG_VBOXGUEST is not set
+# CONFIG_NITRO_ENCLAVES is not set
+# CONFIG_EFI_SECRET is not set
 CONFIG_VIRTIO_MENU=y
 # CONFIG_VIRTIO_PCI is not set
 # CONFIG_VIRTIO_MMIO is not set
@@ -4336,6 +4677,7 @@ CONFIG_GENERIC_STRNLEN_USER=y
 CONFIG_GENERIC_NET_UTILS=y
 # CONFIG_CORDIC is not set
 # CONFIG_PRIME_NUMBERS is not set
+CONFIG_RATIONAL=y
 CONFIG_GENERIC_IOMAP=y
 CONFIG_ARCH_USE_CMPXCHG_LOCKREF=y
 CONFIG_ARCH_HAS_FAST_MULTIPLIER=y
